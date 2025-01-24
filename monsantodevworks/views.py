@@ -1,5 +1,8 @@
+import os
 from django.shortcuts import render
 from .models import Contact
+from django.conf import settings
+
 
 # Função para a página inicial
 def home(request):
@@ -12,6 +15,22 @@ def services(request):
 # Função para a página sobre
 def about(request):
     return render(request, 'about.html')  # Certifique-se de que 'about.html' existe no diretório templates
+
+def clientes(request):
+    # Caminho absoluto para a pasta 'static/clients'
+    clients_path = os.path.join(settings.BASE_DIR, 'static', 'clients')
+    
+    # Verifica se a pasta existe e lista os arquivos suportados
+    if os.path.exists(clients_path):
+        client_logos = [
+            f'clients/{file}' for file in os.listdir(clients_path)
+            if file.lower().endswith(('.png', '.jpg', '.jpeg', '.svg'))
+        ]
+    else:
+        client_logos = []  # Retorna lista vazia se o diretório não existir
+
+    return render(request, 'clientes.html', {'client_logos': client_logos})
+
 
 # Função para a página de contato
 def contact(request):

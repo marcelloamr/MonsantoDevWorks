@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Nossos Clientes - Monsanto DevWorks{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<section class="clientes">
+    <h1>Nossos Clientes</h1>
+    <p>Conheça algumas das empresas e organizações que confiaram em nossos serviços.</p>
+    <div class="scroll-container">
+        <div class="logo-container">
+            {% for logo in client_logos %}
+                <img src="{% static logo %}" alt="Cliente {{ forloop.counter }}" class="client-logo">
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

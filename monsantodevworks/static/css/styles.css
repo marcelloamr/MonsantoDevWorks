@@ -344,3 +344,86 @@ footer a:hover .fa-whatsapp {
         font-size: 0.7rem;
     }
 }
+/* Configuração existente permanece inalterada */
+/* Configuração existente permanece inalterada */
+
+/* Seção de Clientes */
+.clientes {
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.clientes h1 {
+    color: #d4af37;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.clientes p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Container de rolagem */
+.scroll-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    overflow-x: auto;
+    gap: 10px; /* Ajusta o espaçamento entre as logos */
+    padding: 10px 5px; /* Reduz o padding horizontal para equilibrar o centro */
+    width: 100%;
+    max-height: 100px; /* Limita a altura do contêiner */
+    flex-wrap: nowrap; /* Garante que as logos fiquem em uma linha */
+    scrollbar-width: thin; /* Estilo para navegadores suportados */
+}
+
+.scroll-container:active {
+    cursor: grabbing; /* Ícone de arrastar ao clicar */
+}
+
+/* Estilo para os logos */
+.logo-container {
+    display: flex;
+    gap: 40px; /* Espaçamento horizontal entre as logos */
+    justify-content: flex-start; /* Alinha as logos ao início */
+    align-items: center; /* Centraliza as logos verticalmente */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse a área visível */
+    flex-wrap: nowrap; /* Impede a quebra de linha */
+}
+
+.client-logo {
+    width: 90px; /* Tamanho fixo */
+    height: 90px; /* Tamanho fixo */
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%); /* Torna as imagens cinza */
+    margin: 0; /* Remove margens externas */
+}
+
+.client-logo:hover {
+    transform: scale(1); /* Efeito de zoom ao passar o mouse */
+    filter: none; /* Remove o filtro, deixando a imagem colorida */
+}
+
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto; /* Ativa a rolagem horizontal */
+    position: relative;
+    gap: 15px;
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+    max-height: 100px;
+    cursor: grab;
+    flex-wrap: nowrap; /* Evita que os itens quebrem a linha */
+}
